@@ -211,7 +211,7 @@ async function initialize() {
 
   try {
     const [{ createClient }, pdfModule] = await Promise.all([
-      import("https://esm.sh/@supabase/supabase-js@2.95.0"),
+      import("https://esm.sh/@supabase/supabase-js@2.117.1"),
       import("https://esm.sh/jspdf@2.5.2"),
     ]);
     jsPDF = pdfModule.jsPDF;

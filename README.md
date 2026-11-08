@@ -61,7 +61,7 @@ Open `http://localhost:4173`. Configure the Supabase project and local redirect/
 4. The function validates the user’s verified email, looks up the matching award, and upserts one current claim for that email.
 5. The function returns only the claim ID and certificate type (plus the award name when applicable). The browser generates the downloadable PDF.
 
-Each email address has one current claim record. Reclaiming updates the name and certificate details from the current winner list. Winner emails and claim records remain server-side. The static app loads pinned versions of Supabase JS and jsPDF from esm.sh and uses Google Fonts for typography; these services must be reachable by the participant’s browser.
+Each email address has one current claim record. Reclaiming updates the name and certificate details from the current winner list. Winner emails and claim records remain server-side. The static app loads pinned versions of Supabase JS (2.117.1) and jsPDF (2.5.2) from esm.sh and uses Google Fonts for typography; these services must be reachable by the participant’s browser.
 
 ## Project layout
 
