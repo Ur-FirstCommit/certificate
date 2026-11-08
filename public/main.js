@@ -65,7 +65,16 @@ function readableAuthError(error) {
   const description = params.get("error_description");
   if (description || params.get("error_code") === "otp_expired" || /expired|invalid.*link|otp_expired/i.test(error?.message ?? "")) return "That sign-in link is invalid or has expired. Request a fresh link to continue.";
   if (/rate limit|too many/i.test(error?.message ?? "")) return "A link was requested recently. Please wait a moment before trying again.";
-  return "We couldn’t complete that step. Please check your connection and try again.";
+  const message = typeof error?.message === "string" ? error.message.replace(/\s+/g, " ").trim() : "";
+  const statusCode = Number.isFinite(error?.status) ? ` (HTTP ${error.status})` : "";
+  if (!message) return "Supabase Auth did not return an error message. Check the browser’s Network panel for the failed request.";
+  if (/invalid api key|api key.*invalid/i.test(message)) {
+    return `Supabase rejected the publishable key${statusCode}. Check the key and project URL in public/config.js.`;
+  }
+  if (/failed to fetch|networkerror|network request failed|load failed|cors/i.test(message)) {
+    return `The browser could not reach Supabase Auth${statusCode}. Check the request to /auth/v1/otp in the browser’s Network panel. (${message.slice(0, 140)})`;
+  }
+  return `Supabase Auth error${statusCode}: ${message.slice(0, 200)}`;
 }
 
 function certificateCopy(result) {
