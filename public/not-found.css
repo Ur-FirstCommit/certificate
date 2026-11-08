@@ -1,0 +1,54 @@
+:root {
+  --ink: #080808;
+  --muted: #757575;
+  --orange: #ed8613;
+  --display: "Manrope", sans-serif;
+  --body: "DM Sans", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { min-width: 320px; min-height: 100%; }
+body { min-height: 100vh; margin: 0; display: flex; flex-direction: column; background: #fff; color: var(--ink); font-family: var(--body); -webkit-font-smoothing: antialiased; }
+.topbar { width: min(1240px, calc(100% - 72px)); height: 82px; margin-inline: auto; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #ededed; }
+.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font: 700 15px var(--display); letter-spacing: -.5px; }
+.brand-logo { display: block; width: 31px; height: 34px; object-fit: contain; }
+.channel-label, .bottomline { color: #898989; font: 500 9px/1.4 "DM Mono", monospace; letter-spacing: .12em; }
+.channel-label { display: inline-flex; align-items: center; gap: 8px; }
+.signal-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--orange); box-shadow: 0 0 0 4px rgba(237, 134, 19, .12); animation: signal 1.3s steps(2, end) infinite; }
+.not-found { flex: 1; width: min(920px, calc(100% - 32px)); margin: 0 auto; padding: 18px 0 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.television-scene { position: relative; width: min(480px, 88vw); height: clamp(290px, 39vh, 390px); display: grid; place-items: center; }
+.error-code { position: absolute; top: 42%; left: 50%; transform: translate(-50%, -50%); color: #858585; font: 700 clamp(210px, 32vw, 365px)/.8 var(--display); letter-spacing: -.11em; user-select: none; }
+.television { position: relative; z-index: 1; width: min(370px, 78vw); height: auto; margin-top: 0; overflow: visible; filter: drop-shadow(0 9px 3px rgba(0,0,0,.045)); }
+.static-layer { animation: screen-jitter .19s steps(2, end) infinite; transform-box: fill-box; transform-origin: center; }
+.noise { animation: noise-flicker .1s steps(2, end) infinite alternate; }
+.tracking-band { animation: tracking 2.8s linear infinite; }
+.message { width: min(510px, 92%); margin-top: 64px; }
+.kicker { margin: 0 0 9px; color: #a26a32; font: 500 9px/1.4 "DM Mono", monospace; letter-spacing: .14em; }
+.message h1 { margin: 0; font: 700 clamp(25px, 4vw, 34px)/1.2 var(--display); letter-spacing: -.06em; }
+.message > p:not(.kicker) { max-width: 380px; margin: 10px auto 20px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.home-button { min-height: 43px; padding: 0 16px; display: inline-flex; align-items: center; justify-content: center; gap: 17px; border-radius: 999px; background: #090909; color: #fff; text-decoration: none; font-size: 11px; font-weight: 600; transition: transform .18s ease, background .18s ease; }
+.home-button span { color: #f0a24d; font-size: 14px; }
+.home-button:hover { transform: translateY(-2px); background: #292929; }
+.home-button:focus-visible, .brand:focus-visible { outline: 3px solid rgba(237, 134, 19, .55); outline-offset: 4px; }
+.bottomline { width: min(1240px, calc(100% - 72px)); min-height: 54px; margin-inline: auto; border-top: 1px solid #ededed; display: flex; align-items: center; justify-content: space-between; }
+.bottomline b { margin-left: 5px; color: var(--orange); font-size: 12px; }
+@keyframes screen-jitter { 0% { transform: translate(0,0); opacity: .91; } 25% { transform: translate(1px,-1px); opacity: .8; } 50% { transform: translate(-1px,1px); opacity: .96; } 75% { transform: translate(1px,0); opacity: .86; } 100% { transform: translate(0,1px); opacity: .92; } }
+@keyframes noise-flicker { from { opacity: .72; } to { opacity: 1; } }
+@keyframes tracking { 0% { transform: translateY(-48px); opacity: 0; } 12% { opacity: .6; } 88% { opacity: .6; } 100% { transform: translateY(48px); opacity: 0; } }
+@keyframes signal { 0%, 45% { opacity: 1; } 46%, 100% { opacity: .34; } }
+@media (max-width: 580px) {
+  .topbar, .bottomline { width: calc(100% - 36px); }
+  .topbar { height: 70px; }
+  .brand { font-size: 13px; }
+  .channel-label { font-size: 8px; }
+  .not-found { width: calc(100% - 24px); padding: 8px 0 22px; }
+  .television-scene { height: clamp(250px, 34vh, 310px); }
+  .television { width: min(350px, 88vw); margin-top: 0; }
+  .error-code { top: 43%; font-size: clamp(185px, 48vw, 280px); }
+  .message { margin-top: 48px; }
+  .message > p:not(.kicker) { max-width: 300px; margin-bottom: 16px; font-size: 12px; }
+  .bottomline { min-height: 48px; font-size: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

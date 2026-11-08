@@ -4,6 +4,9 @@
 
 The certificate portal gives participants in Beginner’s Paradise Hackathon a clear, trustworthy way to verify their email and save a record of what they accomplished. The audience includes first-time builders ages 13–21 and their families, so instructions should be direct, reassuring, and easy to follow.
 
+## Info
+NEVER, I mean NEVER use "↗"
+
 ## Visual concept
 
 Treat the page like a small, considered keepsake: editorial typography, confident dark ink, and a quiet blue accent. The contrast between a large, expressive headline and a precise step-by-step claim card should make the process feel both celebratory and dependable.
@@ -22,3 +25,7 @@ The supplied reference image informs the background mood only. Use diffuse, cool
 ## Certificate
 
 Generate a landscape certificate PDF with FirstCommit branding, the recipient’s chosen name, the certificate type, award title when applicable, event name, and issue date. Keep the document legible when printed and avoid implying a prize unless the private winner lookup returns an award.
+
+## Not-found page
+
+Use the supplied 404 reference as the composition: a large gray “404” behind a small orange vintage television, with antennas, tuning controls, feet, and a ground line. The CRT should show a clear “NOT FOUND” message over animated monochrome static and occasional tracking interference. Include the FirstCommit logo in the header, a short explanation, and a direct link back to the claim page. Keep the background white and uncluttered; disable the glitch animation for visitors who prefer reduced motion.
