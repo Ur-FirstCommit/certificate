@@ -23,7 +23,7 @@ body { min-height: 100vh; margin: 0; display: flex; flex-direction: column; back
 .noise { animation: noise-flicker .1s steps(2, end) infinite alternate; }
 .tracking-band { animation: tracking 2.8s linear infinite; }
 .message { width: min(510px, 92%); margin-top: 64px; }
-.kicker { margin: 0 0 9px; color: #a26a32; font: 500 9px/1.4 "DM Mono", monospace; letter-spacing: .14em; }
+.kicker { margin: 14px 0 9px; color: #a26a32; font: 500 9px/1.4 "DM Mono", monospace; letter-spacing: .14em; }
 .message h1 { margin: 0; font: 700 clamp(25px, 4vw, 34px)/1.2 var(--display); letter-spacing: -.06em; }
 .message > p:not(.kicker) { max-width: 380px; margin: 10px auto 20px; color: var(--muted); font-size: 13px; line-height: 1.7; }
 .home-button { min-height: 43px; padding: 0 16px; display: inline-flex; align-items: center; justify-content: center; gap: 17px; border-radius: 999px; background: #090909; color: #fff; text-decoration: none; font-size: 11px; font-weight: 600; transition: transform .18s ease, background .18s ease; }
