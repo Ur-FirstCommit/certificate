@@ -1,0 +1,2 @@
+[functions.claim-certificate]
+verify_jwt = true

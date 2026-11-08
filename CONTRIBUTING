@@ -1,0 +1,39 @@
+# Contributing to FirstCommit Certificate Portal
+
+Thank you for considering a contribution. Changes should keep the claim process understandable, accessible, and safe for participants.
+
+## Before you begin
+
+- Check the existing issues and documentation to avoid duplicating work.
+- For substantial changes, open an issue to discuss the proposed behavior before implementation.
+- Never use real participant email addresses or winner records in commits, screenshots, fixtures, or logs.
+
+## Development setup
+
+1. Configure a non-production Supabase project in `public/config.js`.
+2. Add your local origin and redirect URL in Supabase Auth settings and set the Edge Function `ALLOWED_ORIGINS` secret.
+3. Apply the migration and deploy or run the `claim-certificate` function locally with the Supabase CLI.
+4. Serve `public/` over HTTP, for example with `python3 -m http.server 4173 --directory public`.
+
+See [README.md](README.md) for complete configuration and deployment instructions.
+
+## Contribution guidelines
+
+- Keep the static frontend lightweight and compatible with keyboard and screen-reader use.
+- Keep winner lookup and claim writes in the authenticated Edge Function. Do not expose database credentials or private winner data to the browser.
+- Validate inputs on both client and server, and avoid logging personally identifying claim data.
+- Follow the visual guidance in [DESIGN.md](DESIGN.md), including its instruction to treat the supplied reference as mood inspiration rather than copy it.
+- Update the README or design guidance when behavior, configuration, or deployment changes.
+- Use focused commits and include a concise explanation of the motivation and user-visible effect.
+
+## Pull requests
+
+Pull requests should describe the problem, summarize the change, and include the checks performed. For visual changes, include screenshots at desktop and mobile widths. Do not include credentials, participant data, or production records.
+
+## Reporting security issues
+
+Do not report vulnerabilities in a public issue. Contact the maintainers privately through the security contact listed in the repository hosting settings. Do not include live participant information in the report.
+
+## License
+
+By contributing, you agree that your contributions are provided under the project’s [Apache License 2.0](LICENSE).
